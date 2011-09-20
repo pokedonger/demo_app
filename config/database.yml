@@ -15,7 +15,7 @@ development:
   database: uti_app_development
   pool: 5
   username: root
-  password: admin
+  password: dongie
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -28,7 +28,7 @@ test:
   database: uti_app_test
   pool: 5
   username: root
-  password:
+  password: dongie
   host: localhost
 
 production:
@@ -38,5 +38,5 @@ production:
   database: uti_app_production
   pool: 5
   username: root
-  password: admin
+  password: dongie
   host: localhost
