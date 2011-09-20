@@ -6,7 +6,10 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql'
+group :development, :test do
+	gem 'mysql'
+end
+
 gem 'dynamic_form'
 gem 'facebooker2'
 gem 'json'
@@ -32,7 +35,7 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-group :test do
+#group :test do
   # Pretty printed test output
   # gem 'turn', :require => false
-end
+#end
