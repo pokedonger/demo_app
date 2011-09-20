@@ -1,0 +1,10 @@
+<%# load('config/initializers/config.rb') %>
+production:
+  app_id: <%#= $prod_app_id %>
+  secret: <%#= $prod_app_secret %>
+  api_key: <%#= $prod_api_key %>
+
+development:
+  app_id: 283716454973410
+  secret: 9c25f1ff3164ea080f4e844b3c73e221 
+  api_key: 283716454973410

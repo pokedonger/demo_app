@@ -1,0 +1,7 @@
+<% if user_likes_page? %>
+		<p>na like mo na ko!</p>
+		<%= link_to("Click here for a chance to win a UTI Scholarship",:controller => "form", :action => "registration", :prize => 1) %> <br/> <br/>
+		<%= link_to("Click here for a chance to win a makeover for my school's Auto Shop",:controller => "form", :action => "registration", :prize => 2) %>
+<% else %>
+		<p>di mo ko like! :'(</p>
+<% end %>

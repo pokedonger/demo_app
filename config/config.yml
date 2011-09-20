@@ -1,0 +1,19 @@
+development:
+  domain: http://empty-stream-2213.heroku.com
+  #domain: http://localhost:3000
+  share: http://www.facebook.com/pages/UTI/257028147670533?sk=app_283716454973410
+  transloadit_auth_key: 4eee4c9c36f945d284f80cddd2a8cdfd
+  transloadit_template_id: 571d1dfaf8564f498d0f3f852b8c98cb
+test:
+  domain: http://empty-stream-2213.heroku.com
+  #domain: http://localhost:3000
+  share: http://www.facebook.com/pages/UTI/257028147670533?sk=app_283716454973410
+  transloadit_auth_key: 4eee4c9c36f945d284f80cddd2a8cdfd
+  transloadit_template_id: 571d1dfaf8564f498d0f3f852b8c98cb
+production:
+  domain: http://empty-stream-2213.heroku.com
+  #domain: http://localhost:3000
+  share: http://www.facebook.com/pages/UTI/257028147670533?sk=app_283716454973410
+  transloadit_auth_key: 4eee4c9c36f945d284f80cddd2a8cdfd
+  transloadit_template_id: 571d1dfaf8564f498d0f3f852b8c98cb
+  

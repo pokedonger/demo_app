@@ -1,0 +1,95 @@
+<%= form_for :user, :url => {:controller => "form", :action => "registration_confirmation"} do |f| %>	
+				<% if @user.errors.include?(:email) %>
+				<% @email_error = "text-align:left;resize:none;color:gray;border:2px solid red" %>
+				<% @email_value = "Email is required*" %>
+				<% end %>
+				<% if @user.errors.include?(:first_name) %>
+				<% @first_name_error = "text-align:left;resize:none;color:gray;border:2px solid red" %>
+				<% @fname_value = "Firstname is required*" %>
+				<% end %>
+				<% if @user.errors.include?(:last_name) %>
+				<% @last_name_error = "text-align:left;resize:none;color:gray;border:2px solid red" %>
+				<% @lname_value = "Lastname is required*" %>
+				<% end %>
+				<% if @user.errors.include?(:address1) %>
+				<% @address1_error = "text-align:left;resize:none;color:gray;border:2px solid red" %>
+				<% @address1_value = "Address1 is required*" %>
+				<% end %>
+				<% if @user.errors.include?(:address2) %>
+				<% @address2_error = "text-align:left;resize:none;color:gray;border:2px solid red" %>
+				<% @address2_value = "Address2 is required*" %>
+				<% end %>
+				<% if @user.errors.include?(:state) %>
+				<% @state_value = "Please select a state." %>
+				<% end %>
+				<% if @user.errors.include?(:zip) %>
+				<% @zip_error = "text-align:left;resize:none;color:gray;border:2px solid red" %>
+				<% @zip_value = "Zip is required*" %>
+				<% end %>
+				<% if @user.errors.include?(:highschool_name) %>
+				<% @hsname_error = "text-align:left;resize:none;color:gray;border:2px solid red" %>
+				<% @hsname_value = "High School name is required*" %>
+				<% end %>
+				<% if @user.errors.include?(:highschool_address) %>
+				<% @hsaddress_error = "text-align:left;resize:none;color:gray;border:2px solid red" %>
+				<% @hsaddress_value = "High School address is required*" %>
+				<% end %>
+				<% if @user.errors.include?(:highschool_city) %>
+				<% @hscity_error = "text-align:left;resize:none;color:gray;border:2px solid red" %>
+				<% @hscity_value = "High School city is required*" %>
+				<% end %>
+				<% if @user.errors.include?(:highschool_phone) %>
+				<% @hsphone_error = "text-align:left;resize:none;color:gray;border:2px solid red" %>
+				<% @hsphone_value = "Phone is required*" %>
+				<% end %>
+				
+				<% if @user.errors.size > 0 %>
+				<%= f.text_field :first_name, :value => params["user"]["first_name"], :style => @first_name_error, :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}"%>
+				<label><font color = "red"><%= @fname_value %></font></label>
+				<%= f.text_field :last_name, :value => params["user"]["last_name"], :style => @last_name_error, :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %>
+				<font color = "red"><%= @lname_value %></font>
+				<%= f.text_field :email, :value => params["user"]["email"], :style => @last_name_error, :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %>
+				<font color = "red"><%= @email_value %></font>
+				<%= f.text_field :address1, :value => params["user"]["address1"], :style => @address1_error, :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %>
+				<font color = "red"><%= @address1_value %></font>
+				<%= f.text_field :address2, :value => params["user"]["address2"], :style => @address2_error, :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %>
+				<font color = "red"><%= @address2_value %></font><br/>
+				<%= f.label("State: ") %>
+				<%= f.select(:state, "<option>Select state</option><option>AK</option><option>AL</option><option>AR</option><option>AZ</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option><option>HI</option><option>IA</option><option>ID</option><option>IL</option><option>IN</option><option>KS</option><option>KY</option><option>MI</option><option>MN</option><option>MO</option><option>MS</option><option>MT</option><option>NC</option><option>ND</option><option>NE</option><option>NH</option><option>NJ</option><option>NM</option><option>NV</option><option>NY</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VA</option><option>VT</option><option>WA</option><option>WI</option><option>WV</option><option>WY</option>" ) %>
+				<font color = "red"><%= @state_value %></font>
+				<%= f.text_field :zip, :value => params["user"]["zip"], :style => @zip_error, :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %>
+				<font color = "red"><%= @zip_value %></font>
+				<%= f.text_field :highschool_name, :value => params["user"]["highschool_name"], :style => @hsname_error, :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %>
+				<font color = "red"><%= @hsname_value %></font>
+				<%= f.text_field :highschool_address, :value => params["user"]["highschool_address"], :style => @hsaddress_error, :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %>
+				<font color = "red"><%= @hsaddress_value %></font>
+				<%= f.text_field :highschool_city, :value => params["user"]["highschool_city"], :style => @hscity_error, :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %>
+				<font color = "red"><%= @hscity_value %></font>
+				<%= f.text_field :highschool_phone, :value => params["user"]["highschool_phone"], :style => @hsphone_error, :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %>
+				<font color = "red"><%= @hsphone_value %></font>
+				<%= f.hidden_field :prize, :value => params[:prize] %></br>
+				<% else %>
+				<%= f.text_field :first_name, :value => params["user"]["first_name"], :style => @first_name_error, :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}"%><br/>
+				<%= f.text_field :last_name, :value => params["user"]["last_name"], :style => @last_name_error, :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %><br/>
+				<%= f.text_field :email, :value => params["user"]["email"], :style => @last_name_error, :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %><br/>
+				<%= f.text_field :address1, :value => params["user"]["address1"], :style => @address1_error, :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %><br/>
+				<%= f.text_field :address2, :value => params["user"]["address2"], :style => @address2_error, :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %><br/>
+				<%= f.label("State") %>
+				<%= f.select(:state, "<option>AK</option><option>AL</option><option>AR</option><option>AZ</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option><option>HI</option><option>IA</option><option>ID</option><option>IL</option><option>IN</option><option>KS</option><option>KY</option><option>MI</option><option>MN</option><option>MO</option><option>MS</option><option>MT</option><option>NC</option><option>ND</option><option>NE</option><option>NH</option><option>NJ</option><option>NM</option><option>NV</option><option>NY</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VA</option><option>VT</option><option>WA</option><option>WI</option><option>WV</option><option>WY</option>" ) %><br/>
+				<%= f.text_field :zip, :value => params["user"]["zip"], :style => @zip_error, :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %><br/>
+				<%= f.text_field :highschool_name, :value => params["user"]["highschool_name"], :style => @hsname_error, :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %><br/>
+				<%= f.text_field :highschool_address, :value => params["user"]["highschool_address"], :style => @hsaddress_error, :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %><br/>
+				<%= f.text_field :highschool_city, :value => params["user"]["highschool_city"], :style => @hscity_error, :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %><br/>
+				<%= f.text_field :highschool_phone, :value => params["user"]["highschool_phone"], :style => @hsphone_error, :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %><br/>
+				<%= f.hidden_field :prize, :value => params[:prize] %>
+				<% end %>
+				<span>
+					<%= f.check_box :terms %>
+					<%= f.label :terms, "Terms and Conditions." %><br/>
+					
+					<% if !flash[:notice].blank? %>
+					<font color = "red"><%= flash[:notice] %></font><br/>
+					<% end %>
+				</span>
+				<%= f.submit "Submit" %>
+<% end %>

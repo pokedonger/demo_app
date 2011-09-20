@@ -1,0 +1,17 @@
+<h1>Thank you for uploading.</h1>
+<a name="fb_share" type="button_count" class="btn" target="_top" share_url="<%= APP_CONFIG['share'] %>" href="http://www.facebook.com/sharer.php?u=<%= APP_CONFIG['share'] %>" style="text-decoration: none;">SHARE</a>
+
+<script type="text/javascript" src="/assets/jwplayer/jwplayer.js"></script>
+			<div id="mediaspace">text</div>
+				<script type="text/javascript">
+				  jwplayer('mediaspace').setup({
+					'flashplayer': '<%= APP_CONFIG['domain'] %>/assets/jwplayer/player.swf',
+					'file': '<%= @video_url %>',
+					'controlbar': 'bottom',
+					'width': '470',
+					'height': '320'
+				  });
+          </script>
+          
+<p>video from s3: <%= @video_url %> </p>
+<%= link_to "Upload again", :action => "upload" %>

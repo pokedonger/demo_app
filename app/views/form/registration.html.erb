@@ -1,0 +1,21 @@
+<%= form_for :user, :url => {:controller => "form", :action => "registration_confirmation"} do |f| %>
+				
+				<%= f.text_field :first_name, :value => "First Name*", :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}"%><br/>
+				<%= f.text_field :last_name, :value => "Last Name*", :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %><br/>
+				<%= f.text_field :email, :value => "Email*", :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %><br/>
+				<%= f.text_field :address1, :value => "Address1*", :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %><br/>
+				<%= f.text_field :address2, :value => "Address2*", :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %><br/>
+				<%= f.label("State: ") %>
+				<%= f.select(:state, "<option>Select state</option><option>AK</option><option>AL</option><option>AR</option><option>AZ</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option><option>HI</option><option>IA</option><option>ID</option><option>IL</option><option>IN</option><option>KS</option><option>KY</option><option>MI</option><option>MN</option><option>MO</option><option>MS</option><option>MT</option><option>NC</option><option>ND</option><option>NE</option><option>NH</option><option>NJ</option><option>NM</option><option>NV</option><option>NY</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VA</option><option>VT</option><option>WA</option><option>WI</option><option>WV</option><option>WY</option>" ) %><br/>
+				<%= f.text_field :zip, :value => "Zip*", :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %><br/>
+				<%= f.text_field :highschool_name, :value => "High School name*", :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %><br/>
+				<%= f.text_field :highschool_address, :value => "High School address*", :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %><br/>
+				<%= f.text_field :highschool_city, :value => "High School city*", :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %><br/>
+				<%= f.text_field :highschool_phone, :value => "Phone number*", :onblur=>"if(this.value=='') {this.value=this.defaultValue;}", :onfocus=>"if(this.defaultValue==this.value) {this.value = '';}" %><br/>
+				<%= f.hidden_field :prize, :value => params[:prize] %>
+				<span>
+					<%= f.check_box :terms %>
+					<%= f.label :terms, "Terms and Conditions." %><br/>
+				</span>
+				<%= f.submit "Submit" %>
+<% end %>

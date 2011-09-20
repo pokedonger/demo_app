@@ -1,0 +1,17 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="//assets.transloadit.com/js/jquery.transloadit2.js"></script>
+<script type="text/javascript">
+   // We call .transloadit() after the DOM is initialized:
+   $(document).ready(function() {
+     $('#MyForm').transloadit({
+        wait: true
+     });
+   });
+</script>
+
+<form id="MyForm" action="http://api2.transloadit.com/assemblies" enctype="multipart/form-data" method="POST">
+<!--<input type="hidden" name="params" value="<%= raw @options %>" />-->
+<input type="hidden" name="params" value="{&quot;auth&quot;:{&quot;key&quot;:&quot;4eee4c9c36f945d284f80cddd2a8cdfd&quot;},&quot;template_id&quot;:&quot;571d1dfaf8564f498d0f3f852b8c98cb&quot;,&quot;redirect_url&quot;:&quot;http://localhost:3000/test/next&quot;}" />
+<input type="file" name="my_file" />
+<input type="submit" value="Upload">
+</form>
